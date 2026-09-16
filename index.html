@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Platform pembelajaran interaktif tentang perkembangan nilai-nilai Pancasila dari masa kejayaan Nusantara hingga era Reformasi.">
+<meta name="theme-color" content="#173f8a">
+<title>Jejak Nilai Pancasila — Website Pembelajaran Interaktif</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f7fb;
+  --card: #fff;
+  --text: #172033;
+  --muted: #657089;
+  --primary: #173f8a;
+  --secondary: #c99a2e;
+  --accent: #e9f0ff;
+  --border: #dfe5ef;
+  --shadow: 0 12px 30px rgba(25, 45, 85, 0.1);
+  --shadow-hover: 0 20px 40px rgba(25, 45, 85, 0.15);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1419;
+    --card: #1a1f2e;
+    --text: #e8eef8;
+    --muted: #9ca3af;
+    --border: #2d3547;
+    --shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* HEADER & NAVIGATION */
+header {
+  background: linear-gradient(135deg, #102e69, #1d56a0);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+nav {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.9;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+nav a:hover,
+nav a:focus {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(135deg, #173f8a 0%, #2e69bd 60%, #d1a33c 140%);
+  color: #fff;
+  padding: 5rem 1.25rem 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 2.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  animation: slideDown 0.6s ease-out;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.05;
+  margin: 1.25rem 0;
+  font-weight: 800;
+  animation: slideDown 0.8s ease-out 0.1s backwards;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 700px;
+  color: #e9effc;
+  animation: slideDown 0.8s ease-out 0.2s backwards;
+  margin-bottom: 1.5rem;
+}
+
+.hero-button {
+  display: inline-flex;
+  gap: 0.5rem;
+  animation: slideDown 0.8s ease-out 0.3s backwards;
+}
+
+.emblem {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: #fff;
+  color: #173f8a;
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+  font-weight: 900;
+  border: 10px solid #e0b54c;
+  box-shadow: 0 18px 50px rgba(0, 29, 91, 0.33);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* ANIMATIONS */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CONTAINER & SECTIONS */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 4rem 1.25rem;
+}
+
+section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-family: 'Poppins', sans-serif;
+  margin: 0 0 0.75rem;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.lead {
+  color: var(--muted);
+  max-width: 850px;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* TIMELINE */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  margin: 2.5rem 0;
+}
+
+.period-btn {
+  border: 2px solid var(--border);
+  background: var(--card);
+  padding: 1.25rem 1rem;
+  border-radius: 16px;
+  cursor: pointer;
+  text-align: left;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  font-family: 'Inter', sans-serif;
+}
+
+.period-btn:hover {
+  transform: translateY(-4px);
+  border-color: #8ca8da;
+  box-shadow: var(--shadow-hover);
+}
+
+.period-btn:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.period-btn.active {
+  background: linear-gradient(135deg, #edf3ff, #e9f0ff);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--accent);
+  transform: translateY(-4px);
+}
+
+.period-btn b {
+  display: block;
+  color: var(--primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.period-btn span {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* CONTENT CARD */
+.content-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  animation: slideInUp 0.6s ease-out;
+}
+
+.content-card h3 {
+  color: var(--primary);
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.content-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.content-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content-card li {
+  padding: 0.75rem 0 0.75rem 2rem;
+  position: relative;
+  line-height: 1.8;
+  border-bottom: 1px solid var(--border);
+}
+
+.content-card li:last-child {
+  border-bottom: none;
+}
+
+.content-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: 800;
+}
+
+/* GRID & CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 1.75rem;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--secondary);
+}
+
+.card h3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.card p {
+  margin: 0;
+  flex-grow: 1;
+  line-height: 1.75;
+}
+
+.sila {
+  border-top: 5px solid var(--secondary);
+}
+
+.sila .num {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #9b7315;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: 2rem 0;
+}
+
+th,
+td {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: linear-gradient(135deg, #173f8a, #2e69bd);
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+tr:hover {
+  background: var(--accent);
+}
+
+/* QUIZ */
+.quiz {
+  background: linear-gradient(135deg, #eef4ff, #fff);
+  border: 1px solid #cddbf4;
+  animation: slideInUp 0.6s ease-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  .quiz {
+    background: linear-gradient(135deg, #1a2647, #1a1f2e);
+  }
+}
+
+.question {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.question:last-child {
+  border-bottom: none;
+}
+
+.question strong {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: var(--primary);
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--card);
+  transition: var(--transition);
+  gap: 0.75rem;
+}
+
+.options label:hover {
+  background: var(--accent);
+  border-color: var(--primary);
+}
+
+.options input[type="radio"] {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary);
+}
+
+.options input[type="radio"]:focus {
+  outline: 2px solid var(--primary);
+}
+
+/* BUTTONS */
+button.primary {
+  border: none;
+  background: linear-gradient(135deg, #173f8a, #2e69bd);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(23, 63, 138, 0.2);
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(23, 63, 138, 0.3);
+}
+
+button.primary:active {
+  transform: translateY(0);
+}
+
+button.primary:focus {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+/* RESULT MESSAGE */
+.result {
+  font-weight: 700;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  min-height: 1rem;
+  animation: slideInUp 0.4s ease-out;
+}
+
+.result.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.result.partial {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.result.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* CALLOUT */
+.callout {
+  padding: 1.5rem;
+  border-left: 5px solid var(--secondary);
+  background: linear-gradient(135deg, #fffaf0, #fff9e6);
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  transition: var(--transition);
+}
+
+.callout:hover {
+  box-shadow: var(--shadow);
+}
+
+.callout strong {
+  color: var(--primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  .callout {
+    background: rgba(201, 154, 46, 0.1);
+  }
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(135deg, #13294d, #1a3a5c);
+  color: #dce6f7;
+  text-align: center;
+  padding: 2rem 1.25rem;
+  margin-top: 3rem;
+  font-size: 0.95rem;
+}
+
+footer strong {
+  color: #fff;
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .emblem {
+    width: 160px;
+    height: 160px;
+    font-size: 3rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .period-btn b {
+    font-size: 0.85rem;
+  }
+
+  .period-btn span {
+    font-size: 0.7rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.75rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  nav ul {
+    gap: 0.25rem;
+  }
+
+  nav a {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    padding: 3rem 1rem 4rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .emblem {
+    width: 140px;
+    height: 140px;
+    font-size: 2.5rem;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .content-card {
+    padding: 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .lead {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .options label {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* PRINT STYLES */
+@media print {
+  header,
+  footer,
+  .hero-button,
+  button,
+  nav {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .card,
+  .content-card,
+  table {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
+</style>
+</head>
+<body>
+<header role="banner">
+  <nav role="navigation" aria-label="Navigasi utama">
+    <div class="logo">🇮🇩 Jejak Nilai Pancasila</div>
+    <ul>
+      <li><a href="#materi">Materi</a></li>
+      <li><a href="#nilai">Nilai</a></li>
+      <li><a href="#perbandingan">Perbandingan</a></li>
+      <li><a href="#kuis">Kuis</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" role="banner" aria-labelledby="hero-title">
+  <div class="hero-inner">
+    <div>
+      <span class="badge">📚 Website Pembelajaran Pendidikan Pancasila</span>
+      <h1 id="hero-title">Menelusuri Nilai Pancasila dari Masa ke Masa</h1>
+      <p>Pelajari perkembangan nilai-nilai Pancasila dari masa kejayaan Nusantara, penjajahan, Orde Lama, Orde Baru, hingga Reformasi melalui timeline interaktif.</p>
+      <div class="hero-button">
+        <a href="#materi"><button class="primary">Mulai Belajar →</button></a>
+      </div>
+    </div>
+    <div class="emblem" role="img" aria-label="Logo Pancasila">P</div>
+  </div>
+</section>
+
+<main class="container">
+  <section id="materi">
+    <h2 class="section-title">⏳ Timeline Sejarah</h2>
+    <p class="lead">Klik periode untuk membuka materi pembelajaran. Pancasila sebagai dasar negara lahir pada 1945, sedangkan nilai-nilainya memiliki akar historis yang lebih panjang dalam kehidupan masyarakat Nusantara.</p>
+    <div class="timeline" id="timeline" role="group" aria-label="Periode waktu"></div>
+    <div class="content-card" id="periodContent" role="region" aria-live="polite" aria-label="Konten materi"></div>
+  </section>
+
+  <section id="nilai" style="margin-top: 4rem;">
+    <h2 class="section-title">💎 Lima Nilai Dasar Pancasila</h2>
+    <p class="lead">Nilai Pancasila dapat diterapkan dalam kehidupan sehari-hari, bukan sekadar dihafalkan.</p>
+    <div class="grid" id="silaGrid" role="region" aria-label="Lima nilai Pancasila"></div>
+  </section>
+
+  <section id="perbandingan" style="margin-top: 4rem;">
+    <h2 class="section-title">📊 Perbandingan Setiap Masa</h2>
+    <p class="lead">Gunakan tabel ini untuk melihat perubahan konteks penerapan nilai Pancasila.</p>
+    <div style="overflow-x: auto;">
+      <table role="table" aria-label="Perbandingan nilai Pancasila di setiap periode">
+        <thead>
+          <tr>
+            <th scope="col">Periode</th>
+            <th scope="col">Karakteristik</th>
+            <th scope="col">Nilai yang Tampak</th>
+            <th scope="col">Tantangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Kejayaan Nusantara</strong></td>
+            <td>Kerajaan dan masyarakat tradisional</td>
+            <td>Keagamaan, kebersamaan, persatuan, aturan sosial</td>
+            <td>Perbedaan kerajaan dan konflik kekuasaan</td>
+          </tr>
+          <tr>
+            <td><strong>Penjajahan</strong></td>
+            <td>Dominasi kekuatan asing dan eksploitasi</td>
+            <td>Kemanusiaan, persatuan, nasionalisme</td>
+            <td>Penindasan dan perpecahan</td>
+          </tr>
+          <tr>
+            <td><strong>Orde Lama</strong></td>
+            <td>Pembentukan negara dan dinamika politik</td>
+            <td>Nasionalisme, persatuan, demokrasi</td>
+            <td>Konflik politik dan ideologi</td>
+          </tr>
+          <tr>
+            <td><strong>Orde Baru</strong></td>
+            <td>Stabilitas dan pembangunan terpusat</td>
+            <td>Pembangunan, persatuan, pengamalan Pancasila</td>
+            <td>KKN, pembatasan politik, persoalan HAM</td>
+          </tr>
+          <tr>
+            <td><strong>Reformasi</strong></td>
+            <td>Demokratisasi dan keterbukaan</td>
+            <td>Partisipasi, HAM, demokrasi, keberagaman</td>
+            <td>Intoleransi, politik identitas, kesenjangan</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="kuis" style="margin-top: 4rem; margin-bottom: 3rem;">
+    <h2 class="section-title">✅ Kuis Pemahaman</h2>
+    <p class="lead">Jawab pertanyaan berikut untuk menguji pemahamanmu.</p>
+    <div class="content-card quiz" id="quiz" role="form" aria-label="Kuis pemahaman Pancasila"></div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <strong>Jejak Nilai Pancasila</strong><br>
+  Media pembelajaran interaktif • Pendidikan Pancasila<br>
+  <small style="opacity: 0.8;">© 2024 Platform Pembelajaran Pancasila</small>
+</footer>
+
+<script>
+const periods = [
+  {
+    title: "Masa Kejayaan Nusantara",
+    date: "Sebelum 1945",
+    text: "Pancasila sebagai dasar negara belum ada pada masa kerajaan. Namun, sejumlah nilai yang kemudian dirumuskan dalam Pancasila dapat ditemukan dalam kehidupan masyarakat Nusantara.",
+    points: [
+      "Kehidupan keagamaan berkembang dalam masyarakat Hindu, Buddha, dan kemudian Islam.",
+      "Hubungan sosial dan perdagangan membentuk interaksi antardaerah.",
+      "Majapahit sering dibahas dalam konteks persatuan Nusantara.",
+      "Kakawin Sutasoma memuat semboyan Bhinneka Tunggal Ika.",
+      "Aturan sosial, hukum, dan pemerintahan menunjukkan adanya upaya mengatur kehidupan bersama."
+    ]
+  },
+  {
+    title: "Masa Penjajahan",
+    date: "± abad ke-16–1945",
+    text: "Pengalaman penjajahan mendorong kesadaran mengenai kemanusiaan, kebebasan, dan persatuan. Perjuangan yang semula banyak bersifat lokal berkembang menjadi gerakan kebangsaan.",
+    points: [
+      "Perlawanan terhadap penindasan menjadi bagian dari pengalaman sejarah bangsa.",
+      "Organisasi pergerakan nasional membantu menumbuhkan kesadaran kebangsaan.",
+      "Sumpah Pemuda 1928 menegaskan satu tanah air, satu bangsa, dan satu bahasa Indonesia.",
+      "Gagasan mengenai negara merdeka dan masyarakat yang adil berkembang di kalangan pergerakan.",
+      "Menjelang kemerdekaan, para tokoh merumuskan dasar negara melalui BPUPKI, Panitia Sembilan, dan PPKI."
+    ]
+  },
+  {
+    title: "Masa Orde Lama",
+    date: "1945–1966",
+    text: "Pada masa pemerintahan Soekarno, Pancasila menjadi dasar negara dalam situasi pembentukan negara baru dan dinamika politik yang kuat.",
+    points: [
+      "Indonesia mempertahankan kemerdekaan dan membangun lembaga negara.",
+      "Terjadi perubahan sistem politik dari Demokrasi Liberal menuju Demokrasi Terpimpin.",
+      "Dekret Presiden 5 Juli 1959 memberlakukan kembali UUD 1945.",
+      "Konflik politik dan ideologi menjadi salah satu tantangan besar.",
+      "Peristiwa 1965 diikuti perubahan besar dalam kehidupan politik Indonesia."
+    ]
+  },
+  {
+    title: "Masa Orde Baru",
+    date: "1966–1998",
+    text: "Pemerintah Orde Baru menekankan Pancasila, UUD 1945, stabilitas nasional, dan pembangunan. Pada periode ini juga muncul kritik mengenai praktik politik dan hak asasi manusia.",
+    points: [
+      "P4 dikembangkan sebagai pedoman penghayatan dan pengamalan Pancasila.",
+      "Pembangunan ekonomi dan sosial dijalankan melalui program pembangunan nasional.",
+      "Persatuan dan stabilitas nasional sangat ditekankan.",
+      "Pemilu diselenggarakan secara berkala dengan konfigurasi politik yang khas.",
+      "Periode ini juga menghadapi kritik mengenai KKN, pembatasan politik, dan persoalan HAM."
+    ]
+  },
+  {
+    title: "Masa Reformasi",
+    date: "1998–sekarang",
+    text: "Reformasi membawa perubahan dalam demokrasi, keterbukaan, HAM, dan desentralisasi. Nilai Pancasila diterapkan dalam konteks masyarakat yang semakin terbuka dan terdigitalisasi.",
+    points: [
+      "Kebebasan pers dan partisipasi politik berkembang.",
+      "Pemilu menjadi lebih kompetitif dan presiden dipilih secara langsung.",
+      "Desentralisasi dan otonomi daerah diperkuat.",
+      "Perlindungan HAM dan kebebasan sipil mendapat perhatian lebih besar.",
+      "Tantangan baru meliputi intoleransi, politik identitas, kesenjangan, korupsi, dan penyebaran informasi yang memecah belah."
+    ]
+  }
+];
+
+const silaData = [
+  ["Sila 1", "Ketuhanan Yang Maha Esa", "Toleransi, kebebasan menjalankan ibadah, menghormati keyakinan orang lain."],
+  ["Sila 2", "Kemanusiaan yang Adil dan Beradab", "Menghormati martabat manusia, menolak kekerasan dan diskriminasi, membantu sesama."],
+  ["Sila 3", "Persatuan Indonesia", "Menghargai keberagaman, menjaga persatuan, dan menghindari tindakan yang memecah belah."],
+  ["Sila 4", "Kerakyatan yang Berdasarkan Permusyawaratan/Perwakilan", "Musyawarah, menghargai pendapat, partisipasi, dan menerima keputusan bersama."],
+  ["Sila 5", "Keadilan Sosial bagi Seluruh Rakyat Indonesia", "Bersikap adil, memenuhi hak dan kewajiban, serta mendukung pemerataan kesejahteraan."]
+];
+
+const quizQuestions = [
+  ["Pancasila sebagai dasar negara Indonesia disahkan pada ...", ["17 Agustus 1945", "18 Agustus 1945", "1 Juni 1945", "22 Juni 1945"], 1],
+  ["Semboyan Bhinneka Tunggal Ika berasal dari karya ...", ["Negarakertagama", "Sutasoma", "Pararaton", "Arjunawiwaha"], 1],
+  ["Sumpah Pemuda merupakan tonggak penting dalam perkembangan nilai ...", ["Persatuan", "Keadilan ekonomi", "Ketuhanan", "Desentralisasi"], 0],
+  ["P4 sangat ditekankan pada masa ...", ["Kejayaan Nusantara", "Penjajahan", "Orde Lama", "Orde Baru"], 3],
+  ["Salah satu ciri penting era Reformasi adalah ...", ["Demokratisasi dan keterbukaan", "Penghapusan pemilu", "Kembalinya sistem kerajaan", "Pemusatan seluruh kekuasaan"], 0]
+];
+
+// Initialize Timeline
+const timeline = document.getElementById("timeline");
+const periodContent = document.getElementById("periodContent");
+
+periods.forEach((period, index) => {
+  const btn = document.createElement("button");
+  btn.className = "period-btn";
+  btn.setAttribute("aria-pressed", index === 0 ? "true" : "false");
+  btn.setAttribute("aria-label", `${period.title}, ${period.date}`);
+  btn.innerHTML = `<b>${period.title}</b><span>${period.date}</span>`;
+  btn.onclick = () => showPeriod(index);
+  timeline.appendChild(btn);
+});
+
+function showPeriod(index) {
+  document.querySelectorAll(".period-btn").forEach((btn, i) => {
+    btn.classList.toggle("active", i === index);
+    btn.setAttribute("aria-pressed", i === index ? "true" : "false");
+  });
+
+  const period = periods[index];
+  const focusTexts = [
+    "akar nilai dalam kehidupan Nusantara",
+    "kemanusiaan, persatuan, dan nasionalisme",
+    "dasar negara dalam dinamika politik awal kemerdekaan",
+    "pengamalan Pancasila, pembangunan, dan stabilitas",
+    "demokrasi, HAM, partisipasi, dan keberagaman"
+  ];
+
+  periodContent.innerHTML = `
+    <h3>${period.title}</h3>
+    <p>${period.text}</p>
+    <div class="callout">
+      <strong>🎯 Fokus nilai:</strong> ${focusTexts[index]}
+    </div>
+    <ul>
+      ${period.points.map(point => `<li>${point}</li>`).join("")}
+    </ul>
+  `;
+}
+
+showPeriod(0);
+
+// Initialize Sila Cards
+document.getElementById("silaGrid").innerHTML = silaData
+  .map(
+    (sila, idx) => `
+    <article class="card sila">
+      <div class="num">Sila ${idx + 1}</div>
+      <h3>${sila[1]}</h3>
+      <p>${sila[2]}</p>
+    </article>
+  `
+  )
+  .join("");
+
+// Initialize Quiz
+const quiz = document.getElementById("quiz");
+quiz.innerHTML =
+  quizQuestions
+    .map(
+      (question, i) => `
+    <div class="question">
+      <strong>${i + 1}. ${question[0]}</strong>
+      <div class="options">
+        ${question[1]
+          .map(
+            (option, j) => `
+          <label>
+            <input type="radio" name="q${i}" value="${j}" aria-label="Opsi ${String.fromCharCode(65 + j)}: ${option}">
+            ${option}
+          </label>
+        `
+          )
+          .join("")}
+      </div>
+    </div>
+  `
+    )
+    .join("") +
+  `<button class="primary" onclick="checkQuiz()">Periksa Jawaban</button><div class="result" id="result" role="status" aria-live="polite"></div>`;
+
+function checkQuiz() {
+  let score = 0,
+    answered = 0;
+
+  quizQuestions.forEach((question, i) => {
+    const answer = document.querySelector(`input[name=q${i}]:checked`);
+    if (answer) {
+      answered++;
+      if (+answer.value === question[2]) {
+        score++;
+      }
+    }
+  });
+
+  const resultDiv = document.getElementById("result");
+
+  if (answered < quizQuestions.length) {
+    resultDiv.textContent = `⚠️ Jawab semua pertanyaan terlebih dahulu. (${answered}/${quizQuestions.length})`;
+    resultDiv.classList.remove("success", "partial", "error");
+    resultDiv.classList.add("error");
+    return;
+  }
+
+  const percentage = (score / quizQuestions.length) * 100;
+  let message, className;
+
+  if (score === quizQuestions.length) {
+    message = `🎉 Sempurna! Skor kamu: ${score}/${quizQuestions.length} (100%) — Sangat luar biasa!`;
+    className = "success";
+  } else if (score >= 3) {
+    message = `👍 Bagus! Skor kamu: ${score}/${quizQuestions.length} (${percentage.toFixed(0)}%) — Terus belajar untuk menguasai sepenuhnya!`;
+    className = "partial";
+  } else {
+    message = `📚 Skor kamu: ${score}/${quizQuestions.length} (${percentage.toFixed(0)}%) — Ayo pelajari kembali materi timeline dengan teliti.`;
+    className = "error";
+  }
+
+  resultDiv.textContent = message;
+  resultDiv.classList.remove("success", "partial", "error");
+  resultDiv.classList.add(className);
+}
+</script>
+</body>
+</html>
